@@ -1,0 +1,16 @@
+<table class="table">
+  <thead class="thead-dark">
+    <th>Nome</th>
+    <th>Idade</th>
+  </thead>
+  <tbody *ngFor="let pessoa of lista">
+    <tr *ngIf="pessoa.idade > 30">
+      <td>{{ pessoa.nome }}</td>
+      <td>{{ pessoa.idade }}</td>
+    </tr>
+    <tr *ngIfElse="pessoa.idade <= 30">
+      <td>{{ pessoa.nome }}</td>
+      <td>{{ pessoa.idade }}</td>
+    </tr>
+  </tbody>
+</table>
