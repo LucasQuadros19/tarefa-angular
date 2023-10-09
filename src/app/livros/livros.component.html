@@ -1,0 +1,15 @@
+<h1>Livros</h1>
+<table>
+  <thead>
+    <tr>
+      <td>Autor</td>
+      <td>Titulo</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let livros of lista">
+      <td>{{livros.author}}</td>
+      <td>{{livros.title}}</td>
+    </tr>
+  </tbody>
+</table>

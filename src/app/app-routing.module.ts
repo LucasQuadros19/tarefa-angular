@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './index/index.component';
+import { LivrosComponent } from './livros/livros.component';
 import { ListarPessoasComponent } from './listar-pessoas/listarpessoas/listar-pessoas.component';
+import { CarrosComponent } from './carros/carros.component';
 
-import { CarrolistComponent } from './Carros/carrolist/carrolist.component';
-import { LivrolistComponent } from './Livros/livrolist/livrolist.component';
+const routes: Routes = [{ path: "", component: IndexComponent},
+{ path:'admin', component:IndexComponent,children:[
+  {path:'pessoas',component:ListarPessoasComponent},
+  {path:'carros',component:CarrosComponent},
+  {path:'livros',component:LivrosComponent}
 
-const routes: Routes = [{ path: '', component: IndexComponent },
-{ path: 'Carro', component: CarrolistComponent },
-{ path: 'livro', component: LivrolistComponent },
-{ path: 'Pessoa', component: ListarPessoasComponent }];
+]}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
